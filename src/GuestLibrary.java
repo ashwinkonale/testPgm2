@@ -6,7 +6,7 @@
 * To change this template use File | Settings | File Templates.
 */
 public class GuestLibrary extends LibraryBlore {
-    public void reserveBook(){
+    public void reserveBook(String book1){
         System.out.println("Sorry.! u need to login to use this facility");
     }
 

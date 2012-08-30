@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
 * Created with IntelliJ IDEA.
@@ -22,19 +21,21 @@ public class UserLibrary extends LibraryBlore {
     }
 
 
-    public void reserveBook() {
+    public void reserveBook(String bookname) {
         System.out.println("Select the book to be reserved");
-        Scanner reader=new Scanner(System.in);
-        String bookname=reader.nextLine();
+        //Scanner reader=new Scanner(System.in);
+        //String bookname=reader.nextLine();
         boolean availability=false;
         for (int  i = 0 ; i < MAX_NUM_BOOKS; i++){
-            myBook book_temp = booksInLibrary.get(i);
-            if(bookname.equals( book_temp.getBookName())){
-                availability = true;
-                booksInLibrary.remove(i);
+            if(bookname.equals(booksInLibrary[i].getBookName())){
+                availability=true;
+                booksInLibrary[i]=null;
                 break;
             }
+            availability=false;
+
         }
+
         if(availability){
             System.out.println("Congratulation!! You Have Reserved the Book named -->" +bookname);
 
@@ -43,10 +44,11 @@ public class UserLibrary extends LibraryBlore {
             System.out.println("Sorry!! "+ bookname + " is not currently available");
         }
 
+
     }
     public void showLibrarianMsg() {
-        System.out.println("Blah Blah");
-        System.exit(0);
+        System.out.println("Your ID number is  ");
+        //System.exit(0);
 
     }
     public boolean testAuthentication(int userId,String password) {

@@ -29,20 +29,24 @@ public class test {
         LibraryBlore viewBooks = new GuestLibrary();
         viewBooks.showBookList();
     }
-   /* @Test
+    @Test
     public void testReserveBook(){
-        LibraryBlore resBooks=new LibraryBlore();
-        resBooks.reserveBook();
+        LibraryBlore resBooks=new UserLibrary();
+        //String book1 = null;
+        resBooks.reserveBook("book5");
         resBooks.showBookList();
         //myBook newBook=resBooks.booksInLibrary.get(1);
         //assertFalse(resBooks.booksInLibrary.contains(newBook));
     }
+
+
+
     @Test
     public void testShowLibrarianMsg(){
-        LibraryBlore showMsg=new LibraryBlore();
+        UserLibrary showMsg=new UserLibrary();
         showMsg.showLibrarianMsg();
     }
-    @Test
+    /*@Test
     public void testViewMovies(){
         LibraryBlore viewMovies=new LibraryBlore();
         viewMovies.viewMovieList();

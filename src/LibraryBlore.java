@@ -8,13 +8,14 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class LibraryBlore {
-    public ArrayList<myBook>booksInLibrary=new ArrayList<myBook>();
+
     public ArrayList<Movie>MovieList=new ArrayList<Movie>();
 
     protected int MAX_NUM_BOOKS=5;
     private int MAX_NUM_MOVIES=5;
     private String bookName;
     protected String loginType;
+    public myBook [] booksInLibrary=new myBook[MAX_NUM_BOOKS];
 
     public void showWelcomeMsg() {
         System.out.println("WelcomeToLibrary");
@@ -53,14 +54,14 @@ public abstract class LibraryBlore {
 
     private void addBooks() {
         for(int i=0;i<MAX_NUM_BOOKS;i++){
-            booksInLibrary.add(new myBook("book"+i) );
+            booksInLibrary[i]=new myBook("book"+i);
         }
     }
 
     public void showBookList() {
 
-        for(int i = 0;i<booksInLibrary.size();i++){
-            System.out.println(booksInLibrary.get(i));
+        for(int i = 0;i<MAX_NUM_BOOKS;i++){
+            System.out.println(booksInLibrary[i]);
         }
     }
 
@@ -74,7 +75,7 @@ public abstract class LibraryBlore {
         myBook mybook =(myBook)object;
         return bookName==mybook.bookName;
     }
-    abstract void reserveBook();
+    abstract void reserveBook(String book1);
     public boolean selectLoginType(String loginOption) {
         System.out.println("Select your login type");
         System.out.println("1--> USER");
@@ -94,9 +95,6 @@ public abstract class LibraryBlore {
 
         return true;  //To change body of created methods use File | Settings | File Templates.
     }
-
-
-
 
 
 
