@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Time: 9:33 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class LibraryBlore {
+public class LibraryBlore {
 
     public ArrayList<Movie>MovieList=new ArrayList<Movie>();
 
@@ -75,8 +75,9 @@ public abstract class LibraryBlore {
         myBook mybook =(myBook)object;
         return bookName==mybook.bookName;
     }
-    abstract void reserveBook(String book1);
-    public boolean selectLoginType(String loginOption) {
+    void reserveBook(String book1){}
+
+    public String selectLoginType(String loginOption) {
         System.out.println("Select your login type");
         System.out.println("1--> USER");
         System.out.println("2--> GUEST");
@@ -93,7 +94,7 @@ public abstract class LibraryBlore {
 
         }
 
-        return true;  //To change body of created methods use File | Settings | File Templates.
+        return loginOption;  //To change body of created methods use File | Settings | File Templates.
     }
 
 

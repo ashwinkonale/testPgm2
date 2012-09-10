@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
@@ -55,7 +56,7 @@ public class test {
     @Test
     public void testLoginType(){
         UserLibrary testLogin= new UserLibrary();
-        assertTrue(testLogin.selectLoginType("user"));
+        testLogin.selectLoginType("user");
     }
     @Test
     public void testAuthentication(){
